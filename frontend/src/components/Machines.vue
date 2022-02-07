@@ -1,9 +1,9 @@
 <template>
-  <ul>
-    <li v-for="(machine, index) in machines" :key="index">
-      {{ machine.name }}
-    </li>
-  </ul>
+    <ul>
+        <li v-for="(machine, index) in machines" :key="index">
+            {{ machine.name }}
+        </li>
+    </ul>
 </template>
 
 <script>
@@ -11,8 +11,10 @@ import gql from 'graphql-tag'
 
 export default {
     name: 'Machines',
-    data: {
-        machines: []
+    data() {
+        return {
+            machines: []
+        };
     },
     apollo: {
         machines: gql`query {

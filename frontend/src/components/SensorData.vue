@@ -1,9 +1,13 @@
 <template>
-  <ul>
-    <li v-for="(sensor, index) in sensorData" :key="index">
-      {{ sensor.name }}
-    </li>
-  </ul>
+    <div>
+        <datepicker :value="fromDate" :inline="true"></datepicker>
+        <datepicker :value="toDate" :inline="true"></datepicker>
+    </div>
+    <ul>
+        <li v-for="(sensor, index) in sensorData" :key="index">
+            {{ sensor.name }}
+        </li>
+    </ul>
 </template>
 
 <script>
@@ -11,8 +15,12 @@ import gql from 'graphql-tag'
 
 export default {
     name: 'SensorData',
-    data: {
-        sensorData: []
+    data() {
+        return {
+            sensorData: [],
+            fromDate: new Date(),
+            toDate: new Date()
+        };
     },
     apollo: {
     sensorData: {

@@ -1,3 +1,10 @@
+<template>
+    <div>
+        <Machines />
+        <SensorData />
+    </div>
+</template>
+
 <script>
 import Machines from './components/Machines.vue'
 import SensorData from './components/SensorData.vue'
